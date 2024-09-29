@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.chillchat'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.chillchat"
+        minSdk 21 // Updated from 16 to 21 to meet library requirements
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // Core Android dependencies
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+
+    // External dependencies
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.storage
+    implementation 'com.google.firebase:firebase-messaging:24.0.1'
+    implementation 'com.google.firebase:firebase-firestore:23.0.2' // Firebase BoM
+
+    // Test dependencies
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1' // Use correct version
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    //multidex
+    implementation 'androidx.multidex:multidex:2.0.1'
+}

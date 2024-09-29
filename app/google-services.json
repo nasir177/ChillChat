@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "857600533006",
+    "project_id": "chillchat-de30c",
+    "storage_bucket": "chillchat-de30c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857600533006:android:2d0d7955d2ab1d3936925f",
+        "android_client_info": {
+          "package_name": "com.example.chillchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACicFSEKbPB0a7BsLQ1U8tLMgYAo9RTEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

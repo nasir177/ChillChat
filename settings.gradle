@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        google()  // Google's Maven repository
+        mavenCentral()  // Maven Central repository
+        gradlePluginPortal()  // Gradle plugin portal
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)  // Use settings.gradle for repository resolution
+    repositories {
+        google()  // Google's Maven repository
+        mavenCentral()  // Maven Central repository
+    }
+}
+rootProject.name = 'ChillChat'
+include(":app")
