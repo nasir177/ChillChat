@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+
     id 'com.google.gms.google-services'
 }
 
@@ -7,10 +8,18 @@ android {
     namespace 'com.example.chillchat'
     compileSdk 35
 
+    packagingOptions {
+        // Exclude the META-INF/DEPENDENCIES file to resolve conflict
+        exclude 'META-INF/DEPENDENCIES'
+
+        // Exclude the mozilla/public-suffix-list.txt file to resolve conflict
+        exclude 'mozilla/public-suffix-list.txt'
+    }
+
     defaultConfig {
         applicationId "com.example.chillchat"
         minSdk 21 // Updated from 16 to 21 to meet library requirements
-        targetSdk 35
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -26,8 +35,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     buildFeatures {
@@ -47,7 +56,9 @@ dependencies {
     implementation platform(libs.firebase.bom)
     implementation libs.firebase.storage
     implementation 'com.google.firebase:firebase-messaging:24.0.1'
-    implementation 'com.google.firebase:firebase-firestore:23.0.2' // Firebase BoM
+    implementation 'com.google.firebase:firebase-firestore:24.4.0'
+    implementation libs.firebase.database
+    implementation libs.firebase.crashlytics.buildtools// Firebase BoM
 
     // Test dependencies
     testImplementation 'junit:junit:4.13.2'
@@ -56,4 +67,27 @@ dependencies {
 
     //multidex
     implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+    implementation 'com.google.protobuf:protobuf-javalite:3.21.9'
+
+    //lottie animation
+    implementation 'com.airbnb.android:lottie:6.0.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    //retrofit
+    implementation'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.17.0'
+
+    //translation api
+
+    implementation 'com.konghq:unirest-java:3.11.11' // For API requests
+    implementation 'com.google.mlkit:language-id:16.0.0'
+    implementation 'com.google.code.gson:gson:2.8.8'
+
 }

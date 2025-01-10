@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ChillChat</string>
+    <string name="select_user">select_user</string>
+    <string name="select__user">Select User</string>
+    <string name="chillchat">ChillChat</string>
+
+    <string name="unknown_user">Unknown User</string>
+    <string name="message_cannot_be_empty">Message cannot be empty.</string>
+    <string name="receiver_user_missing">Receiver user data is missing!</string>
+    <string name="receiver_not_found">Receiver user not found. Cannot send message.</string>
+    <string name="new_chat">new_chat</string>
+    <string name="new_call">new_call</string>
+    <string name="new_camera">new_camera</string>
+    <string name="settings">settings</string>
+    <string name="new_setting">setting</string>
+
+
 </resources>
